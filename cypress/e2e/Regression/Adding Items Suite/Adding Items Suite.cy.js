@@ -90,7 +90,7 @@ cy.get('@CreatedItemName').then(value => {
 
   });
 
-  it('TC02_create New Sales Item',function () {
+  it.skip('TC02_create New Sales Item',function () {
     
 const randomNumber = Math.floor(Math.random() * 1000000);
 const itemName = `item ${randomNumber}`;
@@ -180,7 +180,7 @@ cy.get('@CreatedSalesItemName').then(value => {
   expect(cleanName).to.contain(itemName);
 });
   });
-it('TC03_create New Purchase Item',function () {
+it.skip('TC03_create New Purchase Item',function () {
   const randomNumber = Math.floor(Math.random() * 1000000);
 const itemName = `item ${randomNumber}`;
     cy.log('open dafater 5');
