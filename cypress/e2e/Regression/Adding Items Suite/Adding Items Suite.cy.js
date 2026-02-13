@@ -90,7 +90,9 @@ cy.get('@CreatedItemName').then(value => {
 
   });
 
-  it.skip('TC02_create New Sales Item',function () {
+ //test 2 
+
+  it('TC02_create New Sales Item',function () {
     
 const randomNumber = Math.floor(Math.random() * 1000000);
 const itemName = `item ${randomNumber}`;
@@ -266,8 +268,8 @@ cy.get('@CreatedPurchaseItemName').then(value => {
   const cleanName = name.trim();
   expect(cleanName).to.contain(itemName);
 });
-  });
+  }); 
 
-});
+}); 
 
 
