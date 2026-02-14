@@ -6,10 +6,9 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Repo') {
+        stage('Checkout Repo B') {
             steps {
-                echo "Checking out Repo B branch main..."
-                // Clone branch main من Repo B
+                // نعمل clone ل Repo B branch main
                 git branch: 'main', url: 'https://github.com/Ahmed-Dorgham/Cypress_Dafater_Regression.git'
             }
         }
@@ -17,15 +16,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo "Installing npm dependencies..."
-                // على Windows نستخدم bat
                 bat 'npm install'
             }
         }
 
         stage('Run Cypress Tests') {
             steps {
-                echo "Running Cypress tests on Firefox..."
-                bat 'npx cypress run --browser firefox'
+                echo "Running Cypress tests on Firefox (headed, specific spec)..."
+                bat 'npx cypress run --browser firefox --headed --spec "cypress/e2e/Regression/Adding Items Suite/Adding Items Suite.cy.js"'
             }
         }
     }
